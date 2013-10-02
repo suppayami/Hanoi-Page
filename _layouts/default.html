@@ -2,29 +2,54 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Belleza' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ site.siteurl }}/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{ site.siteurl }}/css/main.css">
+        <!--[if IE]>
+        <link rel="stylesheet" href="{{ site.siteurl }}/css/iefix.css">
+        <script language="javascript" type="text/javascript" src="{{ site.siteurl }}/js/css3-mediaqueries.js"></script>
+        <![endif]-->
+        <!--[if lt IE 9]>
+        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+        <![endif]-->
     </head>
     <body>
+    <div class="tnavbar" id="tnavbar">
 
-    <div class="navbar">
-    	<div class="navbar-menu">
-    		<span class="navbar-title"><a href="#">Hanoi</a></span>
-    		<span class="navbar-map"><a href="#">People</a></span>
-    		<span class="navbar-map"><a href="#">Places</a></span>
-    		<span class="navbar-map"><a href="#">Food</a></span>
-    	</div>
-    	<div class="navbar-about">
-    		<a href="#">About Us</a>
-    	</div>
+        <div class="tnavbar-menu">
+            <span class="tnavbar-title"><a href="#">Hanoi</a></span>
+            <span class="tnavbar-map"><a href="#">People</a></span>
+            <span class="tnavbar-map"><a href="#">Places</a></span>
+            <span class="tnavbar-map"><a href="#">Food</a></span>
+        </div>
+        
+        <div class="tnavbar-about">
+            <a href="#">About Us</a>
+        </div>
+
     </div>
 
-    <div class="container">
-    aho
+    <div class="tcontainer" id="tcontainer">
+{{ content }}
     </div>
+
+    <!-- Show contents on loading -->
+    <script>
+        var navbar = document.getElementById("tnavbar");
+        var container = document.getElementById("tcontainer");
+        var bannertitle = document.getElementById("banner-title");
+        var bannersubtitle = document.getElementById("banner-subtitle");
+        setTimeout(function(){
+            navbar.className += " tnavbar-show";
+            container.className += " tcontainer-show";  
+            bannertitle.className += " banner-title-show";
+            bannersubtitle.className += " banner-subtitle-show";
+        },100);
+    </script>
 
     </body>
 </html>

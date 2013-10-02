@@ -1,0 +1,31 @@
+.banner .jumbotron .banner-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    position: absolute;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    width: 95%;
+    top: 240px;
+    z-index: 16;
+}
+
+.banner .jumbotron .banner-title:after {
+    content: "";
+}
+
+.banner .jumbotron .banner-subtitle {
+    font-family: 'Open Sans', sans-serif;
+    position: absolute;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    width: 95%;
+    top: 310px;
+    z-index: 16;
+    letter-spacing: 12px;
+}
+
+.banner .jumbotron .banner-subtitle:after {
+    content: "";
+}
