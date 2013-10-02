@@ -8,6 +8,11 @@
     width: 95%;
     top: 240px;
     z-index: 16;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-weight: bold;
+    font-size: 63px;
+    line-height: 1.4em;
 }
 
 .banner .jumbotron .banner-title:after {
@@ -24,6 +29,9 @@
     top: 310px;
     z-index: 16;
     letter-spacing: 12px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 21.5px;
 }
 
 .banner .jumbotron .banner-subtitle:after {

@@ -21,7 +21,7 @@ body {
     opacity: 0;
     margin-top: -3.4em;
     top: 0;
-    z-index: 10;
+    z-index: 100;
 }
 
 .tnavbar-show {
@@ -111,18 +111,24 @@ body {
     height: inherit;
 }
 
-.banner .jumbotron .banner-title {
+.banner .banner-main .banner-title {
     position: absolute;
     text-transform: uppercase;
     color: #fff;
     text-align: center;
     width: 95%;
     top: 220px;
+    left: 5%;
     z-index: 16;
     opacity: 0;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 1em;
 }
 
-.banner .jumbotron .banner-title-show {
+.banner .banner-main .banner-title-show {
     top: 240px;
     opacity: 255;
     -webkit-transition: all 0.6s ease-out 1.1s;
@@ -131,39 +137,71 @@ body {
     transition: all 0.6s ease-out 1.1s;
 }
 
-.banner .jumbotron .banner-title:after {
+.banner .banner-main .banner-title:after {
     content: "Welcome to Hanoi";
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     position: relative;
 }
 
-.banner .jumbotron .banner-subtitle {
+.banner .banner-main .banner-subtitle {
     position: absolute;
     text-transform: uppercase;
     color: #fff;
     text-align: center;
     width: 95%;
     top: 310px;
+    left: 5%;
     margin-left: -20px;
     opacity: 0;
     z-index: 16;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 14px;
 }
 
-.banner .jumbotron .banner-subtitle-show {
+.banner .banner-main .banner-subtitle-show {
     margin-left: 0px;
     opacity: 255;
-    -webkit-transition: all 0.4s ease-out 1.4s;
-    -moz-transition: all 0.4s ease-out 1.4s;
-    -o-transition: all 0.4s ease-out 1.4s;
-    transition: all 0.4s ease-out 1.4s;
+    -webkit-transition: all 0.65s ease-out 1.5s;
+    -moz-transition: all 0.65s ease-out 1.5s;
+    -o-transition: all 0.65s ease-out 1.5s;
+    transition: all 0.65s ease-out 1.5s;
 }
 
-.banner .jumbotron .banner-subtitle:after {
+.banner .banner-main .banner-subtitle:after {
     content: "City for Peace, Capital of Vietnam";
     font-family: 'Open Sans', sans-serif;
     position: relative;
-    letter-spacing: 12px;
+    letter-spacing: 2px;
+}
+
+@media only screen and (min-width: 768px) {
+    .banner .banner-main .banner-title {
+        font-size: 59px;
+        line-height: 1.4em;
+    }
+    .banner .banner-main .banner-subtitle {
+        font-size: 18.5px;
+        letter-spacing: 4px;
+    }
+    .banner .banner-main .banner-subtitle:after {
+        letter-spacing: 4px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .banner .banner-main .banner-title {
+        font-size: 63px;
+        line-height: 1.4em;
+    }
+    .banner .banner-main .banner-subtitle {
+        font-size: 21.5px;
+        letter-spacing: 12px;
+    }
+    .banner .banner-main .banner-subtitle:after {
+        letter-spacing: 12px;
+    }
 }
 
 /* footer */
