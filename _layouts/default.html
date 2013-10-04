@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700' rel='stylesheet' type='text/css'>
@@ -20,14 +18,14 @@
     <div class="tnavbar" id="tnavbar">
 
         <div class="tnavbar-menu">
-            <span class="tnavbar-title"><a href="#">Hanoi</a></span>
-            <span class="tnavbar-map"><a href="#">People</a></span>
-            <span class="tnavbar-map"><a href="#">Places</a></span>
-            <span class="tnavbar-map"><a href="#">Food</a></span>
+            <span class="tnavbar-title"><a onclick="smoothScrollTo(0, 700)">Hanoi</a></span>
+            <span class="tnavbar-map"><a onclick="smoothScrollTo(document.getElementById('people').offsetTop, 700)">People</a></span>
+            <span class="tnavbar-map"><a onclick="smoothScrollTo(document.getElementById('places').offsetTop, 700)">Places</a></span>
+            <span class="tnavbar-map"><a onclick="smoothScrollTo(document.getElementById('food').offsetTop, 700)">Food</a></span>
         </div>
         
         <div class="tnavbar-about">
-            <a href="#">About Us</a>
+            <a onclick="smoothScrollTo(document.getElementById('about').offsetTop, 700)">About Us</a>
         </div>
 
     </div>
@@ -36,18 +34,86 @@
 {{ content }}
     </div>
 
+    <div class="footer" id="about">
+        <div class="container">
+        <div class="info">
+            <strong class="header">Team Information</strong><br/>
+            <div class="content"><span style="color: #8e44ad">[DPI3SN]</span>&nbsp;Nguyen Tuan Cuong<br/>
+            <span style="color: #8e44ad">[DPI3SN]</span>&nbsp;Hoang Long<br/>
+            <span style="color: #8e44ad">[DPI3SN]</span>&nbsp;Pham Hong An<br/><br/>
+            <span style="margin-left: -16px;">Oulu University of Applied Sciences</span></div>
+        </div>
+        <div class="info">
+            We do not own all materials.<br/>
+            Site contents are not available for copying, commercial purposes and advertising.<br />
+            <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en"><img src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" alt="CC"/></a>
+        </div>
+        </div>
+    </div>
+
     <!-- Show contents on loading -->
     <script>
         var navbar = document.getElementById("tnavbar");
         var container = document.getElementById("tcontainer");
         var bannertitle = document.getElementById("banner-title");
         var bannersubtitle = document.getElementById("banner-subtitle");
+
+        window.smoothScrollTo = (function () {
+          var scrollTimer, start, factor;
+          
+          return function (target, duration) {
+            var offset = window.pageYOffset,
+                delta  = target - window.pageYOffset;
+            duration = duration || 1000;
+            start = Date.now();
+            factor = 0;
+            
+            if( scrollTimer ) {
+              clearInterval(scrollTimer);
+            }
+            
+            function step() {
+              var y;
+              factor = (Date.now() - start) / duration;
+              if( factor >= 1 ) {
+                clearInterval(scrollTimer);
+                factor = 1;
+              } 
+              y = factor * delta + offset;
+              window.scrollBy(0, y - window.pageYOffset);
+            }
+            
+            scrollTimer = setInterval(step, 10);
+            return scrollTimer;
+          };
+        }());
+
         setTimeout(function(){
             navbar.className += " tnavbar-show";
             container.className += " tcontainer-show";  
-            bannertitle.className += " banner-title-show";
-            bannersubtitle.className += " banner-subtitle-show";
+            if (window.pageYOffset < 120) {
+                setTimeout(function(){bannertitle.className += " banner-title-show";}, 1100);
+                setTimeout(function(){bannersubtitle.className += " banner-subtitle-show";}, 1500);
+            }
         },100);
+
+        window.onscroll = trigScroll;
+
+        function trigScroll() {
+            if(window.pageYOffset >= 120) {
+                bannertitle.className = "banner-title";
+                bannersubtitle.className = "banner-subtitle";
+            } else {
+                bannertitle.className += " banner-title-show";
+                bannersubtitle.className += " banner-subtitle-show";
+            }
+        };
+
+        window.onload=function(){
+            setTimeout(function(){
+                scrollTo(0,-1);
+            },0);
+        }
     </script>
 
     </body>
