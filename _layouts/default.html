@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>{{ page.title }}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Belleza' rel='stylesheet' type='text/css'>
@@ -19,7 +20,7 @@
 
         <div class="tnavbar-menu">
             <span class="tnavbar-title"><a onclick="smoothScrollTo(0, 700)">Hanoi</a></span>
-            <span class="tnavbar-map"><a onclick="smoothScrollTo(document.getElementById('people').offsetTop, 700)">People</a></span>
+            <span class="tnavbar-map"><a onclick="smoothScrollTo(document.getElementById('general').offsetTop, 700)">General</a></span>
             <span class="tnavbar-map"><a onclick="smoothScrollTo(document.getElementById('places').offsetTop, 700)">Places</a></span>
             <span class="tnavbar-map"><a onclick="smoothScrollTo(document.getElementById('food').offsetTop, 700)">Food</a></span>
         </div>
@@ -114,6 +115,29 @@
                 scrollTo(0,-1);
             },0);
         }
+
+        var hoankiem = document.getElementById("hoan-kiem");
+        var vanmieu = document.getElementById("van-mieu");
+        var phoco = document.getElementById("pho-co");
+
+        hoankiem.onclick = function() { locationActive("hoan-kiem"); };
+        vanmieu.onclick = function() { locationActive("van-mieu"); };
+        phoco.onclick = function() { locationActive("pho-co"); };
+
+        function locationActive(id) {
+            hoankiem.className = "grid-30 grayscale";
+            vanmieu.className = "grid-30 grayscale";
+            phoco.className = "grid-30 grayscale";
+            document.getElementById(id).className = "grid-30";
+            document.getElementById("description").className += " description-hide";
+            setTimeout(function(){
+                var data = document.getElementById("data-" + id).innerHTML;
+                document.getElementById("description").className = "description";
+                document.getElementById("description").innerHTML = data;
+            }, 200)
+        }
+
+        locationActive("hoan-kiem");
     </script>
 
     </body>
