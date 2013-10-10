@@ -1,0 +1,22 @@
+---
+layout: default
+title: Hanoi
+---
+
+<div class="banner" id="header">
+    <div class="banner-img" id="banner-img"></div>
+    <div class="banner-overlay" id="banner-overlay"></div>
+    <div class="banner-main">
+        <span class="banner-title" id="banner-title"><!--[if IE]>Welcome to Hanoi<![endif]--></span>
+        <span class="banner-subtitle" id="banner-subtitle"><!--[if IE]>City for Peace, Capital of Vietnam<![endif]--></span>
+    </div>
+</div>
+
+<div class="section1" id="people">
+</div>
+
+<div class="section2" id="places">
+</div>
+
+<div class="section3" id="food">
+</div>
