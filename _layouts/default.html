@@ -19,10 +19,18 @@
     <div class="tnavbar" id="tnavbar">
 
         <div class="tnavbar-menu">
+            <!--[if !IE]> -->
             <span class="tnavbar-title"><a onclick="smoothScrollTo(0, 700)">Hanoi</a></span>
             <span class="tnavbar-map"><a onclick="smoothScrollTo(document.getElementById('general').offsetTop, 700)">General</a></span>
             <span class="tnavbar-map"><a onclick="smoothScrollTo(document.getElementById('places').offsetTop, 700)">Places</a></span>
             <span class="tnavbar-map"><a onclick="smoothScrollTo(document.getElementById('food').offsetTop, 700)">Food</a></span>
+            <!-- <![endif]-->
+            <!--[if IE]>
+            <span class="tnavbar-title"><a href="#header">Hanoi</a></span>
+            <span class="tnavbar-map"><a href="#general">General</a></span>
+            <span class="tnavbar-map"><a href="#places">Places</a></span>
+            <span class="tnavbar-map"><a href="#food">Food</a></span>
+            <![endif]-->
         </div>
         
         <div class="tnavbar-about">
@@ -125,10 +133,10 @@
         phoco.onclick = function() { locationActive("pho-co"); };
 
         function locationActive(id) {
-            hoankiem.className = "grid-30 grayscale";
-            vanmieu.className = "grid-30 grayscale";
-            phoco.className = "grid-30 grayscale";
-            document.getElementById(id).className = "grid-30";
+            hoankiem.className = "grid-300 grayscale";
+            vanmieu.className = "grid-300 grayscale";
+            phoco.className = "grid-300 grayscale";
+            document.getElementById(id).className += " normal-color";
             document.getElementById("description").className += " description-hide";
             setTimeout(function(){
                 var data = document.getElementById("data-" + id).innerHTML;
@@ -138,7 +146,35 @@
         }
 
         locationActive("hoan-kiem");
-    </script>
 
+        var pho = document.getElementById("pho");
+        var buncha = document.getElementById("bun-cha");
+        var banhcuon = document.getElementById("banh-cuon");
+        var chaca = document.getElementById("cha-ca");
+        var com = document.getElementById("com");
+
+        pho.onclick = function() { foodActive("pho"); };
+        buncha.onclick = function() { foodActive("bun-cha"); };
+        banhcuon.onclick = function() { foodActive("banh-cuon"); };
+        chaca.onclick = function() { foodActive("cha-ca"); };
+        com.onclick = function() { foodActive("com"); };
+
+        function foodActive(id) {
+            pho.className = "grid-480-left grayscale";
+            buncha.className = "grid-480-right grayscale";
+            banhcuon.className = "grid-300 grayscale";
+            chaca.className = "grid-300 grayscale";
+            com.className = "grid-300 grayscale";
+            document.getElementById(id).className += " normal-color";
+            document.getElementById("food-description").className += " description-hide";
+            setTimeout(function(){
+                var data = document.getElementById("data-" + id).innerHTML;
+                document.getElementById("food-description").className = "description";
+                document.getElementById("food-description").innerHTML = data;
+            }, 200)
+        }
+
+        foodActive("pho");
+    </script>
     </body>
 </html>

@@ -246,7 +246,7 @@ body {
 .section2 {
     height: 540px;
     width: 100%;
-    background-color: #2ecc71;
+    background-color: #1abc9c;
 }
 
 .section2 .container {
@@ -255,7 +255,7 @@ body {
     padding-top: 30px;
 }
 
-.section2 .slide .grid-30 {
+.section2 .slide .grid-300 {
     float: left;
     width: 300px;
     margin-left: 10px;
@@ -284,9 +284,58 @@ body {
 }
 
 .section3 {
-    height: 460px;
+    height: 940px;
     width: 100%;
     background-color: #ecf0f1;
+}
+
+.section3 .container {
+    width: 960px;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.section3 .slide .grid-480-left {
+    float: left;
+    width: 300px;
+    margin-left: 160px;
+    margin-right: 20px;
+}
+
+.section3 .slide .grid-480-right {
+    float: left;
+    width: 300px;
+    margin-left: 20px;
+    margin-right: 160px;
+}
+
+.section3 .slide .grid-300 {
+    float: left;
+    width: 300px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 40px;
+}
+
+.section3 .description {
+    font-size: 120%;
+    text-align: center;
+    margin-top: 680px;
+    color: #2c3e50;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+.section3 h1 {
+    font-size: 300%;
+    margin-bottom: 4px;
+}
+
+.section3 .description-hide {
+    opacity: 0;
+    filter: alpha(opacity=0);
 }
 
 @media only screen and (max-width: 980px) {
@@ -306,6 +355,65 @@ body {
         float: left;
         width: 400px;
         padding-top: 90px;
+    }
+
+    .section2 {
+        height: 460px;
+    }
+
+    .section2 .container {
+        width: 780px;
+    }
+
+    .section2 .slide .grid-300 {
+        float: left;
+        width: 240px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .section2 .description {
+        font-size: 100%;
+        text-align: center;
+        margin-top: 280px;
+        color: #ecf0f1;
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        -o-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+    }
+
+    .section3 {
+        height: 780px;
+    }
+
+    .section3 .container {
+        width: 780px;
+    }
+
+    .section3 .slide .grid-300 {
+        float: left;
+        width: 240px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .section3 .slide .grid-480-left {
+        float: left;
+        width: 240px;
+        margin-left: 140px;
+        margin-right: 10px;
+    }
+
+    .section3 .slide .grid-480-right {
+        float: left;
+        width: 240px;
+        margin-left: 10px;
+        margin-right: 140px;
+    }
+    .section3 .description {
+        font-size: 100%;
+        margin-top: 560px;
     }
 }
 

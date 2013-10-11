@@ -1,4 +1,4 @@
-.banner .jumbotron .banner-title {
+.banner .banner-main .banner-title {
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     position: absolute;
@@ -15,11 +15,11 @@
     line-height: 1.4em;
 }
 
-.banner .jumbotron .banner-title:after {
+.banner .banner-main .banner-title:after {
     content: "";
 }
 
-.banner .jumbotron .banner-subtitle {
+.banner .banner-main .banner-subtitle {
     font-family: 'Open Sans', sans-serif;
     position: absolute;
     text-transform: uppercase;
@@ -34,6 +34,6 @@
     font-size: 21.5px;
 }
 
-.banner .jumbotron .banner-subtitle:after {
+.banner .banner-main .banner-subtitle:after {
     content: "";
 }
