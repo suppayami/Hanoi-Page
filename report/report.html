@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Testing Report</title>
+    </head>
+
+    <body>
+        <center><h1>TESTING REPORT</h1></center>
+        <ul>
+            <li>
+                Validator report:
+                <ul>
+                    <li>HTML Validate (Encoding error and warnings only happen on students server): 
+                        <ul>
+                            <li>Error: Internal encoding declaration utf-8 disagrees with the actual encoding of the document (windows-1252).</li>
+                            <li>Warning: Character Encoding mismatch!</li>
+                            <li>Warning: Using windows-1252 instead of the declared encoding iso-8859-1.</li>
+                            <li>Warning: Legacy encoding windows-1252 used. Documents should use UTF-8.</li>
+                            <li>Warning: Using experimental feature: HTML5 Conformance Checker.</li>
+                        </ul>
+                    </li>
+                    <li>CSS Validate (Errors and Warnings caused by each browser render, no problem so far):
+                        <ul>
+                            <li>Errors with <strong>filter</strong> for Internet Explorer. Validator doesn't accept Internet Explorer filters.</li>
+                            <li>Warnings with <strong>render</strong> for Chrome, Safari, Firefox and Opera.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Browser Compatibility report:
+                <ul>
+                    <li>Google Chrome 30: Works perfectly as design and ideas.</li>
+                    <li>Safari 6: Works perfectly as design and ideas.</li>
+                    <li>Mozilla Firefox 24: Works perfectly as design and ideas.</li>
+                    <li>Opera 17: Works perfectly as design and ideas.</li>
+                    <li>Internet Explorer 9: The layout design works nearly perfect, HTML5 and CSS3 effects mostly do not work as intend.</li>
+                    <li>Internet Explorer 10: Works perfectly as design and ideas.</li>
+                </ul>
+            </li>
+            <li>
+                Own opinions and feedback:
+                <ul>
+                    <li>Mostly ideas and design are perfectly completed.</li>
+                    <li>Had some troubles with Google Chrome render at first.</li>
+                    <li>Had some troubles with Internet Explorer, only has Internet Explorer 9 and 10 to test so far.</li>
+                    <li>Use HTML5 and CSS3 in project so some older browsers do not work as intended.</li>
+                    <li>Had some troubles with responsive design. Now works perfectly with device width large than or equal 800 pixels.</li>
+                    <li>Students server does not allow encoding utf-8 which causes an error and three warnings when validating html.</li>
+                    <li>Each browser has its own filter/render so it causes some errors and warnings when validating css.</li>
+                </ul>
+            </li>
+        </ul>
+    </body>
+</html>
