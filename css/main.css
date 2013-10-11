@@ -113,7 +113,7 @@ body {
 }
 
 .banner .banner-main .banner-title {
-    position: fixed;
+    position: absolute;
     text-transform: uppercase;
     color: #fff;
     text-align: center;
@@ -127,30 +127,27 @@ body {
     font-weight: bold;
     font-size: 28px;
     line-height: 1em;
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
-}
-
-.banner .banner-main .banner-title-show {
-    top: 210px;
-    opacity: 1;
     -webkit-transition: all 0.6s ease-out;
     -moz-transition: all 0.6s ease-out;
     -o-transition: all 0.6s ease-out;
     transition: all 0.6s ease-out;
 }
 
+.banner .banner-main .banner-title-show {
+    top: 210px;
+    opacity: 1;
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+}
+
 .banner .banner-main .banner-title:after {
     content: "Welcome to Hanoi";
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-    position: relative;
 }
 
 .banner .banner-main .banner-subtitle {
-    position: fixed;
+    position: absolute;
     text-transform: uppercase;
     color: #fff;
     text-align: center;
@@ -163,10 +160,11 @@ body {
     padding-left: 0px;
     padding-right: 0px;
     font-size: 14px;
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
+    letter-spacing: 2px;
+    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
 }
 
 .banner .banner-main .banner-subtitle-show {
@@ -180,9 +178,6 @@ body {
 
 .banner .banner-main .banner-subtitle:after {
     content: "City for Peace, Capital of Vietnam";
-    font-family: 'Open Sans', sans-serif;
-    position: relative;
-    letter-spacing: 2px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -228,6 +223,7 @@ body {
 .section1 .image-right {
     float: right;
     width: 400px;
+    height: 400px;
     text-align: center;
 }
 
@@ -258,6 +254,7 @@ body {
 .section2 .slide .grid-300 {
     float: left;
     width: 300px;
+    height: 300px;
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -298,6 +295,7 @@ body {
 .section3 .slide .grid-480-left {
     float: left;
     width: 300px;
+    height: 300px;
     margin-left: 160px;
     margin-right: 20px;
 }
@@ -305,6 +303,7 @@ body {
 .section3 .slide .grid-480-right {
     float: left;
     width: 300px;
+    height: 300px;
     margin-left: 20px;
     margin-right: 160px;
 }
@@ -312,6 +311,7 @@ body {
 .section3 .slide .grid-300 {
     float: left;
     width: 300px;
+    height: 300px;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 40px;
@@ -320,7 +320,7 @@ body {
 .section3 .description {
     font-size: 120%;
     text-align: center;
-    margin-top: 680px;
+    padding-top: 320px;
     color: #2c3e50;
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
@@ -348,6 +348,7 @@ body {
     .section1 .image-right {
         float: right;
         width: 360px;
+        height: 360px;
         text-align: center;
     }
 
@@ -368,6 +369,7 @@ body {
     .section2 .slide .grid-300 {
         float: left;
         width: 240px;
+        height: 240px;
         margin-left: 10px;
         margin-right: 10px;
     }
@@ -394,6 +396,7 @@ body {
     .section3 .slide .grid-300 {
         float: left;
         width: 240px;
+        height: 240px;
         margin-left: 10px;
         margin-right: 10px;
     }
@@ -401,6 +404,7 @@ body {
     .section3 .slide .grid-480-left {
         float: left;
         width: 240px;
+        height: 240px;
         margin-left: 140px;
         margin-right: 10px;
     }
@@ -408,12 +412,13 @@ body {
     .section3 .slide .grid-480-right {
         float: left;
         width: 240px;
+        height: 240px;
         margin-left: 10px;
         margin-right: 140px;
     }
     .section3 .description {
         font-size: 100%;
-        margin-top: 560px;
+        padding-top: 270px;
     }
 }
 
@@ -455,6 +460,7 @@ body {
     opacity: 0.65;
     filter: alpha(opacity=65);
     cursor: pointer;
+    display: block;
     -webkit-transition: all 0.4s ease-out;
     -moz-transition: all 0.4s ease-out;
     -o-transition: all 0.4s ease-out;
@@ -471,4 +477,78 @@ body {
 .hidden-data {
     position: absolute;
     display: none;
+}
+
+/* Image loading */
+
+#hanoiflagtower {
+    background-image: url('../img/general.jpg'); 
+    background-repeat: no-repeat;
+    width: inherit;
+    height: inherit;
+    background-size: 100%;
+}
+
+#hoan-kiem {
+    background-image: url('../img/loc1.jpg'); 
+    background-repeat: no-repeat;
+    width: inherit;
+    height: inherit;
+    background-size: 100%;
+}
+
+#van-mieu {
+    background-image: url('../img/Hanoi_Temple_of_Litterature_Fotor.jpg'); 
+    background-repeat: no-repeat;
+    width: inherit;
+    height: inherit;
+    background-size: 100%;
+}
+
+#pho-co {
+    background-image: url('../img/loc3.jpg'); 
+    background-repeat: no-repeat;
+    width: inherit;
+    height: inherit;
+    background-size: 100%;
+}
+
+#pho {
+    background-image: url('../img/pho.jpg'); 
+    background-repeat: no-repeat;
+    width: inherit;
+    height: inherit;
+    background-size: 100%;
+}
+
+#bun-cha {
+    background-image: url('../img/buncha.jpg'); 
+    background-repeat: no-repeat;
+    width: inherit;
+    height: inherit;
+    background-size: 100%;
+}
+
+#banh-cuon {
+    background-image: url('../img/banhcuon.jpg'); 
+    background-repeat: no-repeat;
+    width: inherit;
+    height: inherit;
+    background-size: 100%;
+}
+
+#cha-ca {
+    background-image: url('../img/irIMGP137.jpg'); 
+    background-repeat: no-repeat;
+    width: inherit;
+    height: inherit;
+    background-size: 100%;
+}
+
+#com {
+    background-image: url('../img/com_Fotor.jpg'); 
+    background-repeat: no-repeat;
+    width: inherit;
+    height: inherit;
+    background-size: 100%;
 }
